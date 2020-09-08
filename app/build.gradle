@@ -25,6 +25,11 @@ android {
         sourceCompatibility versions.javaCompatibility
         targetCompatibility versions.javaCompatibility
     }
+
+    packagingOptions {
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
 }
 
 dependencies {
