@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CryptoTest</string>
+    <string name="text_wallet">Wallet</string>
+    <string name="text_defi">Defi</string>
 </resources>
