@@ -7,6 +7,6 @@ import java.math.BigDecimal
  */
 data class WalletCurrencyModel(val iconUrl: String,
                                val coinName: String,
-                               val balance: BigDecimal,
                                val coinSymbol: String,
+                               val balance: BigDecimal,
                                val balanceInUSD: BigDecimal)

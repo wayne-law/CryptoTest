@@ -7,8 +7,4 @@ import java.math.BigDecimal
  */
 data class CurrencyTierModel(val fromCurrency: String,
                              val toCurrency: String,
-                             val rates: List<RateModel>) {
-
-    data class RateModel(val amount: BigDecimal,
-                         val rate: BigDecimal)
-}
+                             val rates: Map<BigDecimal, BigDecimal>)
