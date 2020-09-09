@@ -2,4 +2,6 @@
     <string name="app_name">CryptoTest</string>
     <string name="text_wallet">Wallet</string>
     <string name="text_defi">Defi</string>
+    <string name="text_send">Send</string>
+    <string name="text_receive">Receive</string>
 </resources>

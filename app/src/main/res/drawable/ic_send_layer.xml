@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <size
+                android:height="@dimen/spacing_48"
+                android:width="@dimen/spacing_48"/>
+            <solid android:color="@color/colorPrimary"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_send"
+        android:gravity="center"
+        android:height="@dimen/spacing_32"
+        android:width="@dimen/spacing_32"/>
+</layer-list>

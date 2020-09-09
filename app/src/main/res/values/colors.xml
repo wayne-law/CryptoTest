@@ -7,6 +7,7 @@
     <color name="colorAccent">@color/color_ff_1166fa</color>
 
     <color name="color_00_000000">#00000000</color>
+    <color name="color_00_021e3f">#FF021E3F</color>
     <color name="color_ff_0039cb">#FF0039CB</color>
     <color name="color_ff_1199fa">#FF1199FA</color>
     <color name="color_ff_1166fa">#FF1166FA</color>

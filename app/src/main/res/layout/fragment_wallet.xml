@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_00_021e3f">
+
+    <com.wayne.crypto.test.widget.VirtualStatusBar
+        android:id="@+id/vsb_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/WidgetStyle.IconOnly"
+        android:id="@+id/btn_setting"
+        android:layout_width="@dimen/spacing_48"
+        android:layout_height="@dimen/spacing_56"
+        android:layout_marginStart="@dimen/spacing_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vsb_status"
+        app:icon="@drawable/ic_settings"
+        app:iconTint="@color/color_ff_ffffff"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/WidgetStyle.IconOnly"
+        android:id="@+id/btn_qr_scan"
+        android:layout_width="@dimen/spacing_48"
+        android:layout_height="@dimen/spacing_56"
+        android:layout_marginEnd="@dimen/spacing_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vsb_status"
+        app:icon="@drawable/ic_scan_white"
+        app:iconTint="@color/color_ff_ffffff"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btn_setting,btn_qr_scan"
+        app:barrierDirection="bottom"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/background_home"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_logo_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_banner_defi_wallet_light"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_ff_ffffff"
+        android:textSize="@dimen/text_size_28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo_banner"
+        tools:text="$ 0.00 USD"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_position"
+        app:barrierDirection="bottom"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        style="@style/WidgetStyle.RoundImageView"
+        android:id="@+id/iv_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_32"
+        android:layout_marginTop="@dimen/spacing_32"
+        android:background="@color/color_ff_1199fa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_receive"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_position"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:srcCompat="@drawable/ic_send_layer"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_24"
+        android:layout_marginTop="4dp"
+        android:text="@string/text_send"
+        android:textColor="@color/color_ff_ffffff"
+        android:textSize="@dimen/text_size_12"
+        app:layout_constraintTop_toBottomOf="@+id/iv_send"
+        app:layout_constraintStart_toStartOf="@+id/iv_send"
+        app:layout_constraintEnd_toEndOf="@+id/iv_send"
+        app:layout_constraintBottom_toTopOf="@+id/barrier_top_action"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        style="@style/WidgetStyle.RoundImageView"
+        android:id="@+id/iv_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_32"
+        android:layout_marginTop="@dimen/spacing_32"
+
+        android:background="@color/color_ff_1199fa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_send"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_position"
+        app:srcCompat="@drawable/ic_receive_layer"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_24"
+        android:layout_marginTop="4dp"
+        android:text="@string/text_receive"
+        android:textColor="@color/color_ff_ffffff"
+        android:textSize="@dimen/text_size_12"
+        app:layout_constraintTop_toBottomOf="@+id/iv_receive"
+        app:layout_constraintStart_toStartOf="@+id/iv_receive"
+        app:layout_constraintEnd_toEndOf="@+id/iv_receive"
+        app:layout_constraintBottom_toTopOf="@+id/barrier_top_action"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_top_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_send,tv_receive"
+        app:barrierDirection="bottom"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_wallet_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_top_corner_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_top_action"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_wallet_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/spacing_16"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

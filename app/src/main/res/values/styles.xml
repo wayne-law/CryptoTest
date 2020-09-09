@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="BaseNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="BaseNoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorSecondary">@color/colorSecondary</item>
@@ -18,4 +18,25 @@
         <item name="colorPrimaryDark">@color/color_00_000000</item>
     </style>
 
+    <style name="WidgetStyle"/>
+
+    <style name="WidgetStyle.IconOnly" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:paddingLeft">@dimen/spacing_12</item>
+        <item name="android:paddingRight">@dimen/spacing_12</item>
+        <item name="android:minWidth">@dimen/spacing_48</item>
+        <item name="android:minHeight">@dimen/spacing_48</item>
+        <item name="android:insetTop">@dimen/spacing_null</item>
+        <item name="android:insetBottom">@dimen/spacing_null</item>
+        <item name="iconPadding">@dimen/spacing_null</item>
+        <item name="strokeWidth">@dimen/spacing_null</item>
+    </style>
+
+    <style name="WidgetStyle.RoundImageView" parent="Widget.MaterialComponents.ShapeableImageView">
+        <item name="shapeAppearanceOverlay">@style/WidgetStyle.CornerSize50Percent</item>
+
+    </style>
+    
+    <style name="WidgetStyle.CornerSize50Percent">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
