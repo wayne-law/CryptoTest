@@ -100,6 +100,7 @@ class WalletTabViewModel constructor(
                 //计算以USD计价的余额
                 val balanceInUSD = positionAmount.multiply(currencyRate).setScale(MiscValueConst.DECIMAL_SCALE_IN_USD, RoundingMode.FLOOR)
                 return@map WalletCurrencyModel(
+                    coinId = it.coinId,
                     iconUrl = currencyDetail?.iconImgUrl.orEmpty(),
                     coinName = currencyDetail?.name.orEmpty(),
                     coinSymbol = currencyDetail?.symbol.orEmpty(),
