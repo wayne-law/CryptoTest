@@ -5,7 +5,6 @@ import android.content.Context
 import android.os.Build
 import android.view.View
 import android.view.Window
-import android.view.WindowManager
 import kotlin.math.ceil
 
 /**
@@ -51,9 +50,4 @@ internal object SystemUiUtil {
             or View.SYSTEM_UI_FLAG_LAYOUT_STABLE)
     }
 
-    fun setDisplayCutoutModeShortEdges(window: Window) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            window.attributes.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
-        }
-    }
 }
