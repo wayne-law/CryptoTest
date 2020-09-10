@@ -13,5 +13,6 @@
     <dimen name="spacing_64">64.0dip</dimen>
 
     <dimen name="text_size_12">12.0sp</dimen>
+    <dimen name="text_size_20">20.0sp</dimen>
     <dimen name="text_size_28">28.0sp</dimen>
 </resources>

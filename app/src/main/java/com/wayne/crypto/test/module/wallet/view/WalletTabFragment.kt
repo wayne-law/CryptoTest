@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.AsyncListDiffer
 import com.drakeet.multitype.MultiTypeAdapter
 import com.wayne.crypto.test.R
 import com.wayne.crypto.test.component.AppViewModelFactory
+import com.wayne.crypto.test.constant.MiscValueConst
+import com.wayne.crypto.test.constant.UnitConst
 import com.wayne.crypto.test.model.Status
 import com.wayne.crypto.test.module.wallet.business.WalletTabViewModel
+import com.wayne.crypto.test.utils.SpannableTextUtil
 import kotlinx.android.synthetic.main.fragment_wallet.*
 
 /**
@@ -70,6 +74,16 @@ class WalletTabFragment : Fragment() {
                     Toast.makeText(requireContext(), "request data failed", Toast.LENGTH_SHORT).show()
                 }
             }
+        })
+        viewModel.totalBalanceData.observe(viewLifecycleOwner, {
+            val balance = it?.toPlainString() ?: MiscValueConst.DEFAULT_BALANCE_IN_USD
+            tv_position.text = SpannableTextUtil.createSpannableText(
+                prefix = "${UnitConst.SYMBOL_USD} ",
+                text = balance,
+                postfix = " ${UnitConst.UNIT_USD}",
+                textColor = ContextCompat.getColor(requireContext(), R.color.color_ff_ffffff),
+                textSize = MiscValueConst.SIZE_IN_DP_28
+            )
         })
         viewModel.pageData.observe(viewLifecycleOwner, {
             it?.also {
