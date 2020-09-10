@@ -7,4 +7,4 @@ data class CurrencyDetailModel(val coinId: String,
                                val symbol: String,
                                val name: String,
                                val iconImgUrl: String,
-                               val tokenDecimal: Int)
+                               val displayDecimal: Int)

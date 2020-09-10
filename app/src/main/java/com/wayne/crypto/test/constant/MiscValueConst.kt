@@ -5,5 +5,7 @@ package com.wayne.crypto.test.constant
  */
 object MiscValueConst {
 
+    const val DEFAULT_INT_VALUE = 0
     const val BOOLEAN_TRUE_STR = "true"
+    const val DECIMAL_SCALE_IN_USD = 2
 }
