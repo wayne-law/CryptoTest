@@ -4,4 +4,6 @@
     <string name="text_defi">Defi</string>
     <string name="text_send">Send</string>
     <string name="text_receive">Receive</string>
+    <string name="text_coin_balance_format">%s %s</string>
+    <string name="text_usd_balance_format">$ %s</string>
 </resources>
