@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import java.io.InputStreamReader
+import kotlin.random.Random
 
 /**
  * Created by wayne.liu on 2020/9/9
@@ -43,7 +44,8 @@ class MockWalletTabRepository(private val application: Application) : IWalletTab
             //mock request delay
             delay(500)
             runCatching {
-                InputStreamReader(application.assets.open("currencyRateList.json")).use { jsonStreamReader ->
+                val fileName = "currencyRateList-${Random.nextInt(from = 1, until = 3)}.json"
+                InputStreamReader(application.assets.open(fileName)).use { jsonStreamReader ->
                     gson.fromJson(jsonStreamReader, CurrencyRatesResp::class.java)
                 }
             }.onSuccess {
