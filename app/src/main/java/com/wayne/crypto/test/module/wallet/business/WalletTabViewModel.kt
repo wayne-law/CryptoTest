@@ -43,10 +43,19 @@ class WalletTabViewModel constructor(
     private val pageStatusMutableData: MutableLiveData<Status> = MutableLiveData()
     val pageStatusData = pageStatusMutableData.asLiveData()
     private val walletCurrenciesMutableData: MutableLiveData<List<WalletCurrencyModel>>
+    val totalBalanceData: LiveData<BigDecimal>
     val pageData: LiveData<List<Any>>
 
     init {
         walletCurrenciesMutableData = savedStateHandle.getLiveData(KEY_WALLET_CURRENCY)
+        totalBalanceData = Transformations.map(walletCurrenciesMutableData) {
+            //计算持仓总值
+            var totalInUSD = BigDecimal.ZERO
+            it.forEach { coin ->
+                totalInUSD += coin.balanceInUSD
+            }
+            return@map totalInUSD.setScale(MiscValueConst.DECIMAL_SCALE_IN_USD, RoundingMode.FLOOR)
+        }
         pageData = Transformations.map(walletCurrenciesMutableData) { it }
         //TODO 补充对持币变化时的处理
 
