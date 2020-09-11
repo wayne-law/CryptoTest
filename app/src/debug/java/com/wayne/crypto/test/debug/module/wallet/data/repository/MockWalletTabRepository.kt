@@ -1,10 +1,11 @@
-package com.wayne.crypto.test.module.wallet.data.repository
+package com.wayne.crypto.test.debug.module.wallet.data.repository
 
 import android.app.Application
 import android.util.Log
 import com.google.gson.GsonBuilder
 import com.wayne.crypto.test.module.wallet.data.net.entity.CurrenciesResp
 import com.wayne.crypto.test.module.wallet.data.net.entity.CurrencyRatesResp
+import com.wayne.crypto.test.module.wallet.data.repository.IWalletTabRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext

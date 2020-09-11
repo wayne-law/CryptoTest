@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import com.drakeet.multitype.MultiTypeAdapter
 import com.wayne.crypto.test.R
 import com.wayne.crypto.test.component.AppViewModelFactory
+import com.wayne.crypto.test.component.CryptoApplication
 import com.wayne.crypto.test.constant.MiscValueConst
 import com.wayne.crypto.test.constant.UnitConst
 import com.wayne.crypto.test.model.Status
@@ -27,8 +28,10 @@ class WalletTabFragment : Fragment() {
 
     private val viewModel: WalletTabViewModel by lazy {
         requireActivity().let {
-            val defaultArgs = it.intent?.extras
-            ViewModelProvider(requireActivity(), AppViewModelFactory(it.application, it, defaultArgs))[WalletTabViewModel::class.java]
+            ViewModelProvider(
+                it,
+                AppViewModelFactory((it.application as CryptoApplication).appContainer, it, it.intent?.extras)
+            )[WalletTabViewModel::class.java]
         }
     }
 
